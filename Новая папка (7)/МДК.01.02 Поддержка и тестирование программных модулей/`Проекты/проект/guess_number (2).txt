@@ -1,0 +1,9 @@
+guess_number_game/
+├── README.md
+├── main.py          # Главный файл для запуска
+├── game_logic.py    # Логика игры (генерация числа, проверка)
+├── ui_mainwindow.py # Сгенерированный из .ui файл (опционально)
+├── mainwindow.ui    # Файл интерфейса из Qt Designer
+└── screenshots/     # Папка со скриншотами
+    ├── prototype.png
+    └── user_flow.png
