@@ -1,0 +1,7 @@
+task_manager/
+├── db/
+│   ├── connection.py
+│   └── task_repository.py
+├── main.py
+└── requirements.txt
+
