@@ -1,0 +1,35 @@
+1. Связь: Python → Драйвер (psycopg2) → PostgreSQL
+
+2. Установка:
+
+bash
+pip install psycopg2
+3. Подключение:
+
+python
+import psycopg2
+conn = psycopg2.connect(host="...", dbname="...", user="...", password="...")
+cur = conn.cursor()  # делатель запросов
+4. Запросы:
+
+python
+# SELECT
+cur.execute("SELECT * FROM users")
+rows = cur.fetchall()  # список кортежей
+
+# INSERT / UPDATE / DELETE (обязательно commit!)
+cur.execute("INSERT INTO users (name) VALUES (%s)", ("Вася",))
+conn.commit()  # фиксируем изменения
+%s — защита от SQL-инъекций (так надо).
+
+5. Транзакции:
+
+commit() — сохранить
+
+rollback() — откатить
+
+6. Закрытие (обязательно!):
+
+python
+cur.close()
+conn.close()
